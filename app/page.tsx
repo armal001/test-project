@@ -8,7 +8,7 @@ export default function Home() {
           <h2 className="text-3xl mb-6">Titanium. So strong. So light. So Pro.</h2>
           <div className="space-x-8">
             <a href="#" className="text-blue-500 hover:underline text-xl">Mehr erfahren &gt;</a>
-            <a href="#" className="text-blue-500 hover:underline text-xl">Kaufen &gt;</a>
+            <a href="#" className="text-green-500 hover:text-green-600 hover:underline text-xl">Kaufen &gt;</a>
           </div>
         </div>
       </section>
@@ -20,7 +20,7 @@ export default function Home() {
           <h3 className="text-2xl text-gray-600 mb-4">Mit M2 Chip</h3>
           <div className="space-x-8">
             <a href="#" className="text-blue-500 hover:underline">Mehr erfahren &gt;</a>
-            <a href="#" className="text-blue-500 hover:underline">Kaufen &gt;</a>
+            <a href="#" className="text-green-500 hover:text-green-600 hover:underline">Kaufen &gt;</a>
           </div>
         </div>
 
@@ -29,7 +29,7 @@ export default function Home() {
           <h3 className="text-2xl text-gray-600 mb-4">Supercharged by M2</h3>
           <div className="space-x-8">
             <a href="#" className="text-blue-500 hover:underline">Mehr erfahren &gt;</a>
-            <a href="#" className="text-blue-500 hover:underline">Kaufen &gt;</a>
+            <a href="#" className="text-green-500 hover:text-green-600 hover:underline">Kaufen &gt;</a>
           </div>
         </div>
       </section>
