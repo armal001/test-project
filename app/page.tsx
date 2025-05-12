@@ -1,7 +1,3 @@
-'use client';
-
-import ShareButton from './components/ShareButton';
-
 export default function Home() {
   return (
     <main className="bg-white">
