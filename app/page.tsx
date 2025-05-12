@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import ShareButton from './components/ShareButton';
 
 export default function Home() {
