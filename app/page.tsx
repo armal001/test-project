@@ -5,8 +5,6 @@ import ShareButton from './components/ShareButton';
 export default function Home() {
   return (
     <main className="bg-white">
-      <ShareButton />
-
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-black text-white">
         <div className="text-center">
