@@ -1,8 +1,10 @@
+'use client';
 import Link from 'next/link';
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="bg-white font-sans">
+    <main className="font-sans">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
@@ -26,108 +28,213 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-40 pb-32 bg-gradient-to-b from-[var(--brand-light)] to-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-[var(--brand)]/20 to-transparent -skew-y-3 z-0" />
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h1 className="text-6xl md:text-7xl font-extralight text-gray-900 mb-8 leading-tight">
+      <section className="pt-40 pb-32 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+          <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
             Ihre Mitglieder.<br />Ihre App.<br />Unser System.
-          </h1>
-          <p className="text-2xl text-gray-600 mb-12 max-w-2xl mx-auto font-light">
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }} className="text-2xl text-gray-600 mb-12 max-w-2xl mx-auto font-light">
             Trainto verbindet Ihre Marke mit Technologie für Studioerfolg. Steigern Sie Ihre Auslastung und Kundenbindung mit unseren intelligenten Lösungen.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="bg-[var(--brand)] text-white px-10 py-4 rounded-full text-xl font-semibold shadow-lg hover:bg-[var(--brand-dark)] transition-all">
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="flex flex-col md:flex-row gap-4 justify-center mb-16">
+            <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
               Jetzt Demo sichern
             </button>
-            <Link href="https://traintogo.de" className="text-[var(--brand)] border border-[var(--brand)] px-10 py-4 rounded-full text-xl font-semibold hover:bg-[var(--brand-light)] transition-all">
+            <Link href="https://traintogo.de" className="btn border border-brand text-brand bg-white hover:bg-brand hover:text-white transition">
               Für Nutzer: traintogo.de
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Solutions Section */}
-      <section id="solutions" className="py-28 bg-white border-t border-b border-gray-100 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-[var(--brand)]/10 to-transparent -skew-y-2 z-0" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-light text-center mb-4 tracking-tight">Unsere Lösungen</h2>
-          <p className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light">
+      <motion.section
+        id="solutions"
+        className="py-28 bg-white border-t border-b border-gray-100"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.h2
+            className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            Unsere Lösungen
+          </motion.h2>
+          <motion.p
+            className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Zwei innovative Produkte, die perfekt aufeinander abgestimmt sind, um Ihr Studio auf das nächste Level zu heben.
-          </p>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 flex flex-col items-start hover:shadow-2xl transition-shadow">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">gymdeals</h3>
-              <p className="text-gray-600 mb-8 font-light">Kundenbindung & Rewards als White-Label-Lösung für Ihr Studio.</p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center text-gray-700 text-lg font-light">
+          </motion.p>
+          <motion.div
+            className="grid md:grid-cols-2 gap-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.18 } }
+            }}
+          >
+            <motion.div
+              className="card flex flex-col items-start"
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.7 }}
+            >
+              <motion.h3 className="text-2xl font-semibold mb-4 text-gray-900"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >gymdeals</motion.h3>
+              <motion.p className="text-gray-600 mb-8 font-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >Kundenbindung & Rewards als White-Label-Lösung für Ihr Studio.</motion.p>
+              <motion.ul className="space-y-4 mb-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: {},
+                  visible: { transition: { staggerChildren: 0.12 } }
+                }}
+              >
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   Individuelles Branding
-                </li>
-                <li className="flex items-center text-gray-700 text-lg font-light">
+                </motion.li>
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   Gamifizierte Kundenbindung
-                </li>
-                <li className="flex items-center text-gray-700 text-lg font-light">
+                </motion.li>
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   Intelligentes Dashboard
-                </li>
-                <li className="flex items-center text-gray-700 text-lg font-light">
+                </motion.li>
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   Automatisierte CRM-Tools
-                </li>
-              </ul>
-              <button className="text-[var(--brand)] font-semibold hover:underline text-lg transition-all">
+                </motion.li>
+              </motion.ul>
+              <motion.button
+                className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 Mehr erfahren →
-              </button>
-            </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 flex flex-col items-start hover:shadow-2xl transition-shadow">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">traintogo</h3>
-              <p className="text-gray-600 mb-8 font-light">Flexible Check-in-Lösung für moderne Studios.</p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center text-gray-700 text-lg font-light">
+              </motion.button>
+            </motion.div>
+            <motion.div
+              className="card flex flex-col items-start"
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.7 }}
+            >
+              <motion.h3 className="text-2xl font-semibold mb-4 text-gray-900"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >traintogo</motion.h3>
+              <motion.p className="text-gray-600 mb-8 font-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >Flexible Check-in-Lösung für moderne Studios.</motion.p>
+              <motion.ul className="space-y-4 mb-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: {},
+                  visible: { transition: { staggerChildren: 0.12 } }
+                }}
+              >
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   Minutengenaue Abrechnung
-                </li>
-                <li className="flex items-center text-gray-700 text-lg font-light">
+                </motion.li>
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   QR-Code Check-in
-                </li>
-                <li className="flex items-center text-gray-700 text-lg font-light">
+                </motion.li>
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   Flexible Mitgliederverwaltung
-                </li>
-                <li className="flex items-center text-gray-700 text-lg font-light">
+                </motion.li>
+                <motion.li className="flex items-center text-gray-700 text-lg font-light"
+                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                >
                   <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
                   Echtzeit-Auslastungsüberwachung
-                </li>
-              </ul>
-              <button className="text-[var(--brand)] font-semibold hover:underline text-lg transition-all">
+                </motion.li>
+              </motion.ul>
+              <motion.button
+                className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 Partner werden →
-              </button>
-            </div>
-          </div>
+              </motion.button>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-28 bg-gradient-to-b from-[var(--brand-light)] to-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-r from-[var(--brand)]/10 to-transparent -skew-y-2 z-0" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-light text-center mb-4 tracking-tight">Vorteile für Studios</h2>
+      <motion.section
+        id="benefits"
+        className="py-28 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight">Vorteile für Studios</h2>
           <p className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light">
             Steigern Sie Ihre Effizienz und maximieren Sie Ihren Erfolg mit unseren integrierten Lösungen.
           </p>
           <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div className="bg-white rounded-3xl shadow-xl p-10 flex flex-col items-center hover:shadow-2xl transition-shadow">
+            <div className="card flex flex-col items-center">
               <div className="text-5xl font-semibold text-[var(--brand)] mb-2">+30%</div>
               <p className="text-gray-700 text-lg font-light text-center">Umsatzsteigerung durch flexible Abrechnung</p>
             </div>
-            <div className="bg-white rounded-3xl shadow-xl p-10 flex flex-col items-center hover:shadow-2xl transition-shadow">
+            <div className="card flex flex-col items-center">
               <div className="text-5xl font-semibold text-[var(--brand)] mb-2">+45%</div>
               <p className="text-gray-700 text-lg font-light text-center">Kundenbindung durch gamifizierte Rewards</p>
             </div>
-            <div className="bg-white rounded-3xl shadow-xl p-10 flex flex-col items-center hover:shadow-2xl transition-shadow">
+            <div className="card flex flex-col items-center">
               <div className="text-5xl font-semibold text-[var(--brand)] mb-2">+25%</div>
               <p className="text-gray-700 text-lg font-light text-center">Neukundengewinnung durch traintogo-Netzwerk</p>
             </div>
@@ -136,91 +243,111 @@ export default function Home() {
           <div className="mt-12">
             <h3 className="text-xl font-semibold text-center mb-8 text-gray-700">Vertrauen Sie uns</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              <div className="h-12 w-32 bg-[var(--brand-light)] rounded-xl"></div>
-              <div className="h-12 w-32 bg-[var(--brand-light)] rounded-xl"></div>
-              <div className="h-12 w-32 bg-[var(--brand-light)] rounded-xl"></div>
-              <div className="h-12 w-32 bg-[var(--brand-light)] rounded-xl"></div>
+              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
+              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
+              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
+              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Demo Section */}
-      <section className="py-28 bg-white border-t border-b border-gray-100 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-[var(--brand)]/10 to-transparent -skew-y-2 z-0" />
-        <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <div className="bg-gradient-to-br from-[var(--brand)] to-[var(--brand-dark)] rounded-3xl p-16 text-center text-white shadow-2xl">
-            <h2 className="text-4xl font-light mb-6">Demo anfordern</h2>
+      <motion.section
+        className="py-28 bg-white border-t border-b border-gray-100"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.15 }}
+      >
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="card text-center text-gray-900">
+            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Demo anfordern</h2>
             <p className="text-2xl mb-10 max-w-2xl mx-auto font-light">
               Entdecken Sie, wie Trainto Ihr Studio auf das nächste Level bringt. Kombinieren Sie die Vorteile von gymdeals und traintogo für maximale Effizienz.
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <button className="bg-white text-[var(--brand)] px-10 py-4 rounded-full text-xl font-semibold shadow-lg hover:bg-[var(--brand-light)] transition-all">
+              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
                 gymdeals Demo
               </button>
-              <button className="bg-white text-[var(--brand)] px-10 py-4 rounded-full text-xl font-semibold shadow-lg hover:bg-[var(--brand-light)] transition-all">
+              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
                 traintogo Demo
               </button>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Case Studies Section */}
-      <section id="case-studies" className="py-28 bg-gradient-to-b from-[var(--brand-light)] to-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-r from-[var(--brand)]/10 to-transparent -skew-y-2 z-0" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-light text-center mb-4 tracking-tight">Fallstudien & Erfolgsgeschichten</h2>
+      <motion.section
+        id="case-studies"
+        className="py-28 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight">Fallstudien & Erfolgsgeschichten</h2>
           <p className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light">
             Erfahren Sie, wie andere Studios mit Trainto ihre Effizienz steigern und neue Mitglieder gewinnen.
           </p>
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-3xl shadow-xl flex flex-col hover:shadow-2xl transition-shadow">
+            <div className="card flex flex-col">
               <h3 className="text-2xl font-semibold mb-4 text-gray-900">Studio X mit gymdeals</h3>
               <p className="text-gray-600 mb-8 font-light">
                 Wie Studio X seine Kundenbindung um 45% steigerte und neue Mitglieder gewann.
               </p>
-              <button className="text-[var(--brand)] font-semibold hover:underline text-lg transition-all self-start">
+              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition self-start">
                 Fallstudie lesen →
               </button>
             </div>
-            <div className="bg-white p-10 rounded-3xl shadow-xl flex flex-col hover:shadow-2xl transition-shadow">
+            <div className="card flex flex-col">
               <h3 className="text-2xl font-semibold mb-4 text-gray-900">Studio Y mit traintogo</h3>
               <p className="text-gray-600 mb-8 font-light">
                 Die digitale Transformation von Studio Y mit unserer Check-in-Lösung.
               </p>
-              <button className="text-[var(--brand)] font-semibold hover:underline text-lg transition-all self-start">
+              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition self-start">
                 Fallstudie lesen →
               </button>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Section */}
-      <section id="about" className="py-28 bg-white border-t border-b border-gray-100 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-[var(--brand)]/10 to-transparent -skew-y-2 z-0" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl font-light mb-8 tracking-tight">Über uns</h2>
-            <p className="text-2xl text-gray-600 mb-8 font-light">
+      <motion.section
+        id="about"
+        className="py-32 bg-white border-t border-b border-gray-100"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.25 }}
+      >
+        <div className="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+          <h2 className="text-5xl font-semibold text-gray-900 mb-10 tracking-tight">Über uns</h2>
+          <div className="max-w-xl mx-auto">
+            <p className="text-2xl text-gray-700 mb-8 font-light leading-relaxed">
               Unsere Mission: Fitness für alle – mit Technologie für Studios
             </p>
-            <p className="text-gray-500 mb-8 text-xl font-light">
-              Wir bei Trainto glauben daran, dass moderne Technologie Studios dabei helfen kann,
-              ihre Mitglieder besser zu betreuen und gleichzeitig ihr Geschäft zu wachsen. Mit unseren
-              integrierten Lösungen gymdeals und traintogo schaffen wir ein Ökosystem, das sowohl
-              Studios als auch Nutzern maximale Flexibilität und Effizienz bietet.
+            <p className="text-gray-500 mb-8 text-xl font-light leading-relaxed">
+              Wir bei Trainto glauben daran, dass moderne Technologie Studios dabei helfen kann, ihre Mitglieder besser zu betreuen und gleichzeitig ihr Geschäft zu wachsen. Mit unseren integrierten Lösungen gymdeals und traintogo schaffen wir ein Ökosystem, das sowohl Studios als auch Nutzern maximale Flexibilität und Effizienz bietet.
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-28 bg-gradient-to-b from-[var(--brand-light)] to-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-[var(--brand)]/10 to-transparent -skew-y-2 z-0" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-light text-center mb-4 tracking-tight">Kontakt & Support</h2>
+      <motion.section
+        id="contact"
+        className="py-28 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight">Kontakt & Support</h2>
           <p className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light">
             Haben Sie Fragen zu unseren Lösungen? Unser Team steht Ihnen gerne zur Verfügung.
           </p>
@@ -238,41 +365,41 @@ export default function Home() {
                 <label className="block text-gray-700 mb-2 font-light">Nachricht</label>
                 <textarea className="w-full px-6 py-3 rounded-xl border border-gray-300 focus:border-[var(--brand)] focus:ring-2 focus:ring-[var(--brand)]/20 font-light text-lg h-32"></textarea>
               </div>
-              <button className="w-full bg-[var(--brand)] text-white px-6 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[var(--brand-dark)] transition-all">
+              <button className="btn w-full text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
                 Nachricht senden
               </button>
             </form>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
-      <footer className="bg-[var(--brand-light)] text-gray-700 py-16 border-t border-gray-200">
+      <footer className="bg-[#181f27] text-white py-16 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12">
             <div>
-              <h3 className="text-2xl font-extralight mb-4 text-gray-900">TrainTo</h3>
-              <p className="text-gray-500 font-light">
+              <h3 className="text-2xl font-extralight mb-4 text-white">TrainTo</h3>
+              <p className="text-gray-300 font-light">
                 Ihre Mitglieder. Ihre App. Unser System.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-gray-900">Quicklinks</h4>
+              <h4 className="font-semibold mb-4 text-white">Quicklinks</h4>
               <ul className="space-y-2">
-                <li><Link href="https://traintogo.de" className="text-gray-700 hover:text-[var(--brand)] transition-colors">traintogo.de (Für Nutzer)</Link></li>
-                <li><Link href="#demo" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Demo</Link></li>
-                <li><Link href="#support" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Support</Link></li>
+                <li><Link href="https://traintogo.de" className="text-gray-300 hover:text-[var(--brand)] transition-colors">traintogo.de (Für Nutzer)</Link></li>
+                <li><Link href="#demo" className="text-gray-300 hover:text-[var(--brand)] transition-colors">Demo</Link></li>
+                <li><Link href="#support" className="text-gray-300 hover:text-[var(--brand)] transition-colors">Support</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-gray-900">Rechtliches</h4>
+              <h4 className="font-semibold mb-4 text-white">Rechtliches</h4>
               <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Impressum</Link></li>
-                <li><Link href="#" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Datenschutz</Link></li>
+                <li><Link href="#" className="text-gray-300 hover:text-[var(--brand)] transition-colors">Impressum</Link></li>
+                <li><Link href="#" className="text-gray-300 hover:text-[var(--brand)] transition-colors">Datenschutz</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-gray-900">Social Media</h4>
+              <h4 className="font-semibold mb-4 text-white">Social Media</h4>
               <div className="flex space-x-4">
                 <Link href="#" className="text-gray-400 hover:text-[var(--brand)]">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
