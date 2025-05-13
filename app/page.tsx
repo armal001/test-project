@@ -9,19 +9,17 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            <Link href="/" className="text-3xl font-extralight tracking-tight text-gray-900">TrainTo</Link>
+            <Link href="/" className="text-3xl font-bold tracking-tight text-[var(--brand)]">traintogo</Link>
             <div className="hidden md:flex space-x-10">
-              <Link href="#solutions" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Lösungen</Link>
-              <Link href="#benefits" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Vorteile</Link>
-              <Link href="#case-studies" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Fallstudien</Link>
-              <Link href="#about" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Über uns</Link>
+              <Link href="#features" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Features</Link>
+              <Link href="#how" className="text-gray-700 hover:text-[var(--brand)] transition-colors">So funktioniert's</Link>
+              <Link href="#faq" className="text-gray-700 hover:text-[var(--brand)] transition-colors">FAQ</Link>
               <Link href="#contact" className="text-gray-700 hover:text-[var(--brand)] transition-colors">Kontakt</Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Link href="https://traintogo.de" className="text-gray-700 hover:text-[var(--brand)] transition-colors text-base">Für Nutzer</Link>
-              <button className="bg-[var(--brand)] text-white px-7 py-2 rounded-full text-base font-semibold shadow-md hover:bg-[var(--brand-dark)] transition-all">
-                Demo sichern
-              </button>
+              <a href="#download" className="bg-[var(--brand)] text-white px-7 py-2 rounded-full text-base font-semibold shadow-md hover:bg-[var(--brand-dark)] transition-all">
+                App laden
+              </a>
             </div>
           </div>
         </div>
@@ -30,26 +28,26 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-40 pb-32 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-          <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            Ihre Mitglieder.<br />Ihre App.<br />Unser System.
+          <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-5xl md:text-7xl font-bold text-[var(--brand)] mb-8 leading-tight">
+            Trainiere spontan,<br />wann du willst –<br />ohne Mitgliedschaft!
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }} className="text-2xl text-gray-600 mb-12 max-w-2xl mx-auto font-light">
-            Trainto verbindet Ihre Marke mit Technologie für Studioerfolg. Steigern Sie Ihre Auslastung und Kundenbindung mit unseren intelligenten Lösungen.
+            Minutengenaue Abrechnung. Über 100 Studios. Einfach QR-Code scannen und loslegen. Die flexible Fitness-App für alle.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="flex flex-col md:flex-row gap-4 justify-center mb-16">
-            <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
-              Jetzt Demo sichern
-            </button>
-            <Link href="https://traintogo.de" className="btn border border-brand text-brand bg-white hover:bg-brand hover:text-white transition">
-              Für Nutzer: traintogo.de
-            </Link>
+            <a href="#download" className="btn text-white border border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand-dark)] hover:text-white transition">
+              App kostenlos laden
+            </a>
+            <a href="#how" className="btn border border-[var(--brand)] text-[var(--brand)] bg-white hover:bg-[var(--brand)] hover:text-white transition">
+              So funktioniert's
+            </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Solutions Section */}
+      {/* Features Section */}
       <motion.section
-        id="solutions"
+        id="features"
         className="py-28 bg-white border-t border-b border-gray-100"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -58,13 +56,13 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-6">
           <motion.h2
-            className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight"
+            className="text-4xl font-semibold text-[var(--brand)] text-center mb-4 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            Unsere Lösungen
+            Features
           </motion.h2>
           <motion.p
             className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light"
@@ -73,10 +71,10 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Zwei innovative Produkte, die perfekt aufeinander abgestimmt sind, um Ihr Studio auf das nächste Level zu heben.
+            Flexibles Training, minutengenaue Abrechnung, QR-Code Check-in und mehr – alles in einer App.
           </motion.p>
           <motion.div
-            className="grid md:grid-cols-2 gap-12"
+            className="grid md:grid-cols-4 gap-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -86,270 +84,189 @@ export default function Home() {
             }}
           >
             <motion.div
-              className="card flex flex-col items-start"
+              className="card flex flex-col items-center"
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.7 }}
             >
-              <motion.h3 className="text-2xl font-semibold mb-4 text-gray-900"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >gymdeals</motion.h3>
-              <motion.p className="text-gray-600 mb-8 font-light"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-              >Kundenbindung & Rewards als White-Label-Lösung für Ihr Studio.</motion.p>
-              <motion.ul className="space-y-4 mb-8"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={{
-                  hidden: {},
-                  visible: { transition: { staggerChildren: 0.12 } }
-                }}
-              >
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  Individuelles Branding
-                </motion.li>
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  Gamifizierte Kundenbindung
-                </motion.li>
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  Intelligentes Dashboard
-                </motion.li>
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  Automatisierte CRM-Tools
-                </motion.li>
-              </motion.ul>
-              <motion.button
-                className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Mehr erfahren →
-              </motion.button>
+              <div className="text-5xl mb-4">💸</div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">Minutengenaue Abrechnung</h3>
+              <p className="text-gray-600 text-center font-light">Bezahle nur die Zeit, die du wirklich trainierst – ab 9 Cent/Minute.</p>
             </motion.div>
             <motion.div
-              className="card flex flex-col items-start"
+              className="card flex flex-col items-center"
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.7 }}
             >
-              <motion.h3 className="text-2xl font-semibold mb-4 text-gray-900"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >traintogo</motion.h3>
-              <motion.p className="text-gray-600 mb-8 font-light"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-              >Flexible Check-in-Lösung für moderne Studios.</motion.p>
-              <motion.ul className="space-y-4 mb-8"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={{
-                  hidden: {},
-                  visible: { transition: { staggerChildren: 0.12 } }
-                }}
-              >
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  Minutengenaue Abrechnung
-                </motion.li>
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  QR-Code Check-in
-                </motion.li>
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  Flexible Mitgliederverwaltung
-                </motion.li>
-                <motion.li className="flex items-center text-gray-700 text-lg font-light"
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                >
-                  <span className="inline-block w-2 h-2 bg-[var(--brand)] rounded-full mr-3"></span>
-                  Echtzeit-Auslastungsüberwachung
-                </motion.li>
-              </motion.ul>
-              <motion.button
-                className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Partner werden →
-              </motion.button>
+              <div className="text-5xl mb-4">📱</div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">QR-Code Check-in</h3>
+              <p className="text-gray-600 text-center font-light">Einfach im Studio einchecken – kein Papierkram, keine Warteschlange.</p>
+            </motion.div>
+            <motion.div
+              className="card flex flex-col items-center"
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="text-5xl mb-4">🌍</div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">Viele Studios</h3>
+              <p className="text-gray-600 text-center font-light">Über 100 Partnerstudios – trainiere überall, wann du willst.</p>
+            </motion.div>
+            <motion.div
+              className="card flex flex-col items-center"
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="text-5xl mb-4">💳</div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">Einfache Bezahlung</h3>
+              <p className="text-gray-600 text-center font-light">Zahle bequem per App: Kreditkarte, PayPal, Google Pay.</p>
             </motion.div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Benefits Section */}
+      {/* How it works Section */}
       <motion.section
-        id="benefits"
-        className="py-28 bg-gray-50"
+        id="how"
+        className="py-28 bg-[var(--brand-light)] border-b border-gray-100"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-4xl font-semibold text-[var(--brand)] text-center mb-12 tracking-tight">So funktioniert's</h2>
+          <div className="grid md:grid-cols-4 gap-10">
+            <div className="flex flex-col items-center">
+              <div className="text-4xl mb-4">⬇️</div>
+              <h3 className="text-lg font-semibold mb-2 text-[var(--brand)]">App laden</h3>
+              <p className="text-gray-600 text-center font-light">Lade die traintogo-App kostenlos im App Store oder bei Google Play.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-4xl mb-4">🏋️‍♂️</div>
+              <h3 className="text-lg font-semibold mb-2 text-[var(--brand)]">Studio wählen</h3>
+              <p className="text-gray-600 text-center font-light">Finde ein Studio in deiner Nähe und wähle es in der App aus.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-4xl mb-4">🔳</div>
+              <h3 className="text-lg font-semibold mb-2 text-[var(--brand)]">QR-Code scannen</h3>
+              <p className="text-gray-600 text-center font-light">Checke mit dem QR-Code direkt im Studio ein – ganz ohne Wartezeit.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-4xl mb-4">⏱️</div>
+              <h3 className="text-lg font-semibold mb-2 text-[var(--brand)]">Trainieren & zahlen</h3>
+              <p className="text-gray-600 text-center font-light">Trainiere so lange du willst und zahle minutengenau über die App.</p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Vorteile Section */}
+      <motion.section
+        className="py-28 bg-white border-b border-gray-100"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, delay: 0.1 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight">Vorteile für Studios</h2>
+          <h2 className="text-4xl font-semibold text-[var(--brand)] text-center mb-4 tracking-tight">Deine Vorteile</h2>
           <p className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light">
-            Steigern Sie Ihre Effizienz und maximieren Sie Ihren Erfolg mit unseren integrierten Lösungen.
+            Unabhängigkeit, Flexibilität und volle Kostenkontrolle – mit traintogo trainierst du, wie es zu deinem Leben passt.
           </p>
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div className="card flex flex-col items-center">
-              <div className="text-5xl font-semibold text-[var(--brand)] mb-2">+30%</div>
-              <p className="text-gray-700 text-lg font-light text-center">Umsatzsteigerung durch flexible Abrechnung</p>
+              <div className="text-5xl font-semibold text-[var(--brand)] mb-2">🚀</div>
+              <p className="text-gray-700 text-lg font-light text-center">Trainiere wann und wo du willst – ohne Vertragsbindung.</p>
             </div>
             <div className="card flex flex-col items-center">
-              <div className="text-5xl font-semibold text-[var(--brand)] mb-2">+45%</div>
-              <p className="text-gray-700 text-lg font-light text-center">Kundenbindung durch gamifizierte Rewards</p>
+              <div className="text-5xl font-semibold text-[var(--brand)] mb-2">🔓</div>
+              <p className="text-gray-700 text-lg font-light text-center">Volle Flexibilität: Verschiedene Studios, keine Verpflichtung.</p>
             </div>
             <div className="card flex flex-col items-center">
-              <div className="text-5xl font-semibold text-[var(--brand)] mb-2">+25%</div>
-              <p className="text-gray-700 text-lg font-light text-center">Neukundengewinnung durch traintogo-Netzwerk</p>
-            </div>
-          </div>
-          {/* Partner Logos */}
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold text-center mb-8 text-gray-700">Vertrauen Sie uns</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
-              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
-              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
-              <div className="h-12 w-32 bg-gray-100 rounded-xl"></div>
+              <div className="text-5xl font-semibold text-[var(--brand)] mb-2">💡</div>
+              <p className="text-gray-700 text-lg font-light text-center">Einfache Nutzung: QR-Code scannen, trainieren, minutengenau zahlen.</p>
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* Demo Section */}
+      {/* App Download Section */}
       <motion.section
-        className="py-28 bg-white border-t border-b border-gray-100"
+        id="download"
+        className="py-28 bg-[var(--brand-light)] border-b border-gray-100"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, delay: 0.15 }}
       >
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="card text-center text-gray-900">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Demo anfordern</h2>
+            <h2 className="text-4xl font-semibold text-[var(--brand)] mb-6">App herunterladen</h2>
             <p className="text-2xl mb-10 max-w-2xl mx-auto font-light">
-              Entdecken Sie, wie Trainto Ihr Studio auf das nächste Level bringt. Kombinieren Sie die Vorteile von gymdeals und traintogo für maximale Effizienz.
+              Starte jetzt mit traintogo! Lade die App kostenlos herunter und trainiere flexibel in über 100 Studios.
             </p>
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
-                gymdeals Demo
-              </button>
-              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
-                traintogo Demo
-              </button>
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-6">
+              <a href="#" className="btn text-white border border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand-dark)] hover:text-white transition">
+                App Store
+              </a>
+              <a href="#" className="btn text-[var(--brand)] border border-[var(--brand)] bg-white hover:bg-[var(--brand)] hover:text-white transition">
+                Google Play
+              </a>
+            </div>
+            <div className="mt-6">
+              <span className="text-gray-500">Oder scanne den QR-Code mit deinem Smartphone:</span>
+              <div className="flex justify-center mt-4">
+                <div className="w-32 h-32 bg-gray-200 rounded-xl flex items-center justify-center text-2xl text-gray-400">QR</div>
+              </div>
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* Case Studies Section */}
+      {/* FAQ Section */}
       <motion.section
-        id="case-studies"
-        className="py-28 bg-gray-50"
+        id="faq"
+        className="py-28 bg-white border-b border-gray-100"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight">Fallstudien & Erfolgsgeschichten</h2>
-          <p className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light">
-            Erfahren Sie, wie andere Studios mit Trainto ihre Effizienz steigern und neue Mitglieder gewinnen.
-          </p>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="card flex flex-col">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Studio X mit gymdeals</h3>
-              <p className="text-gray-600 mb-8 font-light">
-                Wie Studio X seine Kundenbindung um 45% steigerte und neue Mitglieder gewann.
-              </p>
-              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition self-start">
-                Fallstudie lesen →
-              </button>
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-semibold text-[var(--brand)] text-center mb-12 tracking-tight">FAQ</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">Brauche ich eine Mitgliedschaft?</h3>
+              <p className="text-gray-600 font-light">Nein! Mit traintogo trainierst du flexibel und zahlst nur, wenn du wirklich trainierst – ganz ohne Vertrag.</p>
             </div>
-            <div className="card flex flex-col">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Studio Y mit traintogo</h3>
-              <p className="text-gray-600 mb-8 font-light">
-                Die digitale Transformation von Studio Y mit unserer Check-in-Lösung.
-              </p>
-              <button className="btn text-brand border border-brand bg-white hover:bg-brand hover:text-white transition self-start">
-                Fallstudie lesen →
-              </button>
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">Wie funktioniert die minutengenaue Abrechnung?</h3>
+              <p className="text-gray-600 font-light">Du checkst per QR-Code ein und aus. Die App berechnet automatisch die exakte Trainingszeit und den Preis.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">Wie bezahle ich?</h3>
+              <p className="text-gray-600 font-light">Du kannst bequem per Kreditkarte, PayPal oder Google Pay zahlen – alles direkt in der App.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-[var(--brand)]">Wo kann ich trainieren?</h3>
+              <p className="text-gray-600 font-light">In allen Partnerstudios, die du in der App findest. Das Netzwerk wächst ständig!</p>
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* About Section */}
-      <motion.section
-        id="about"
-        className="py-32 bg-white border-t border-b border-gray-100"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, delay: 0.25 }}
-      >
-        <div className="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
-          <h2 className="text-5xl font-semibold text-gray-900 mb-10 tracking-tight">Über uns</h2>
-          <div className="max-w-xl mx-auto">
-            <p className="text-2xl text-gray-700 mb-8 font-light leading-relaxed">
-              Unsere Mission: Fitness für alle – mit Technologie für Studios
-            </p>
-            <p className="text-gray-500 mb-8 text-xl font-light leading-relaxed">
-              Wir bei Trainto glauben daran, dass moderne Technologie Studios dabei helfen kann, ihre Mitglieder besser zu betreuen und gleichzeitig ihr Geschäft zu wachsen. Mit unseren integrierten Lösungen gymdeals und traintogo schaffen wir ein Ökosystem, das sowohl Studios als auch Nutzern maximale Flexibilität und Effizienz bietet.
-            </p>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Contact Section */}
+      {/* Kontakt Section */}
       <motion.section
         id="contact"
-        className="py-28 bg-gray-50"
+        className="py-28 bg-[var(--brand-light)]"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-semibold text-gray-900 text-center mb-4 tracking-tight">Kontakt & Support</h2>
+          <h2 className="text-4xl font-semibold text-[var(--brand)] text-center mb-4 tracking-tight">Kontakt & Support</h2>
           <p className="text-xl text-gray-500 text-center mb-16 max-w-3xl mx-auto font-light">
-            Haben Sie Fragen zu unseren Lösungen? Unser Team steht Ihnen gerne zur Verfügung.
+            Du hast Fragen? Unser Team hilft dir gerne weiter.
           </p>
           <div className="max-w-2xl mx-auto">
             <form className="space-y-8">
@@ -365,7 +282,7 @@ export default function Home() {
                 <label className="block text-gray-700 mb-2 font-light">Nachricht</label>
                 <textarea className="w-full px-6 py-3 rounded-xl border border-gray-300 focus:border-[var(--brand)] focus:ring-2 focus:ring-[var(--brand)]/20 font-light text-lg h-32"></textarea>
               </div>
-              <button className="btn w-full text-brand border border-brand bg-white hover:bg-brand hover:text-white transition">
+              <button className="btn w-full text-white border border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand-dark)] hover:text-white transition">
                 Nachricht senden
               </button>
             </form>
@@ -378,17 +295,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12">
             <div>
-              <h3 className="text-2xl font-extralight mb-4 text-white">TrainTo</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[var(--brand)]">traintogo</h3>
               <p className="text-gray-300 font-light">
-                Ihre Mitglieder. Ihre App. Unser System.
+                Flexibles Training. Minutengenaue Abrechnung. Überall trainieren.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-white">Quicklinks</h4>
               <ul className="space-y-2">
-                <li><Link href="https://traintogo.de" className="text-gray-300 hover:text-[var(--brand)] transition-colors">traintogo.de (Für Nutzer)</Link></li>
-                <li><Link href="#demo" className="text-gray-300 hover:text-[var(--brand)] transition-colors">Demo</Link></li>
-                <li><Link href="#support" className="text-gray-300 hover:text-[var(--brand)] transition-colors">Support</Link></li>
+                <li><Link href="#download" className="text-gray-300 hover:text-[var(--brand)] transition-colors">App laden</Link></li>
+                <li><Link href="#how" className="text-gray-300 hover:text-[var(--brand)] transition-colors">So funktioniert's</Link></li>
+                <li><Link href="#faq" className="text-gray-300 hover:text-[var(--brand)] transition-colors">FAQ</Link></li>
               </ul>
             </div>
             <div>

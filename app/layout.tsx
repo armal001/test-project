@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "TrainTo",
-  description: "Entdecken Sie die innovative Welt von TrainTo. Die Plattform für Studios und flexible Fitnesslösungen.",
+  title: "traintogo.de – Flexibles Training ohne Vertrag | Pay-per-Minute Fitness-App",
+  description: "Trainiere spontan, wann und wo du willst – ohne Mitgliedschaft! Minutengenaue Abrechnung, QR-Code Check-in, viele Studios. Die flexible Fitness-App für alle.",
 };
 
 export default function RootLayout({

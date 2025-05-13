@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff;
+  --background: #F5F7FA;
   --foreground: #181f27;
-  --brand: #3B82F6;
-  --brand-dark: #1e3a8a;
-  --brand-light: #e0f2fe;
-  --accent: #A259FF;
-  --accent-light: #f3e8ff;
+  --brand: #00C2CB;
+  --brand-dark: #008B92;
+  --brand-light: #E0FBFC;
+  --accent: #FFB800;
+  --accent-light: #FFF7E0;
   --highlight: #00FFB2;
   --highlight-light: #e6fff7;
   --card-bg: #fff;
@@ -47,7 +47,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   min-height: 100vh;
   letter-spacing: 0.01em;
   transition: background 0.3s, color 0.3s;
